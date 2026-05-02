@@ -2,21 +2,21 @@
 
 A simple Python CLI tool to view and edit save files for **Goblin Dungeons** (by Loolust). Decrypts, modifies, and re-encrypts `ProgressData.save` using the game's internal AES-CBC keys.
 
-> ⚠️ **Use at your own risk.** Always back up your save files before editing. Modifying game saves may violate terms of service or cause corruption.
+> **Use at your own risk.** Always back up your save files before editing.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔓 Decrypts `ProgressData.save` using extracted game keys
-- ✏️ Edit resources, equipment levels, spells, and map progress via numbered menu
-- 💾 Auto-backups original save to `.bak` before writing changes
-- 🔐 Re-encrypts and saves in original format
-- 🧩 Unknown keys in save file are still displayed for advanced editing
+- Decrypts `ProgressData.save` using extracted game keys
+- Edit resources, equipment levels, spells, and map progress via numbered menu
+- Auto-backups original save to `.bak` before writing changes
+- Re-encrypts and saves in original format
+- Unknown keys in save file are still displayed for advanced editing
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 - Python **3.10+**
 - `pycryptodome` library
@@ -27,11 +27,11 @@ Install dependencies:
 pip install pycryptodome
 ```
 
-> 💡 The script uses [PEP 723 inline script metadata](https://peps.python.org/pep-0723/). If your environment supports it (e.g., `uv`, `pipx run`), dependencies can be installed automatically.
+> The script uses [PEP 723 inline script metadata](https://peps.python.org/pep-0723/). If your environment supports it (e.g., `uv`, `pipx run`), dependencies can be installed automatically.
 
 ---
 
-## 🚀 Usage
+## Usage
 
 1. **Place the script** in any folder (no installation required).
 
@@ -39,7 +39,7 @@ pip install pycryptodome
    ```
    %USERPROFILE%\AppData\LocalLow\Loolust\GoblinDungeons\ProgressData.save
    ```
-   > 🛠 To change the path, edit the `SAVE_PATH` variable in the script.
+   > To change the path, edit the `SAVE_PATH` variable in the script.
 
 3. **Run the script**:
    ```bash
@@ -54,7 +54,7 @@ pip install pycryptodome
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 The AES key and IV are pre-configured from the game's `LocalFilesDataWriter` class (extracted via dnSpy). Only modify these if you're certain the game has updated its encryption:
 
@@ -68,7 +68,6 @@ To edit which fields appear in the menu, modify the `LAYOUT` list:
 ```python
 LAYOUT = [
     ("Resource", [
-        ("dick", "Dick"),
         ("ore", "Ore"),
         # ... add or remove fields
     ]),
@@ -78,7 +77,7 @@ LAYOUT = [
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ```
 save_editor.py          # Main script
@@ -88,11 +87,11 @@ ProgressData.save.bak   # Auto-generated backup
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 - This tool is for **personal, educational use only**.
 - The author is not affiliated with Loolust or Goblin Dungeons.
-- Editing saves may cause instability, achievements to break, or bans in online features.
+- Editing saves may cause instability, achievements to break.
 - **Always keep backups** — corruption is possible.
 
 ---
@@ -100,7 +99,3 @@ ProgressData.save.bak   # Auto-generated backup
 ## 📄 License
 
 MIT License — Feel free to use, modify, and share. See [LICENSE](LICENSE) for details.
-
----
-
-> 🙏 Found a bug or have a feature request? Open an issue on GitHub!
