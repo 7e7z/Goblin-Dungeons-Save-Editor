@@ -96,6 +96,6 @@ ProgressData.save.bak   # Auto-generated backup
 
 ---
 
-## 📄 License
+## License
 
 MIT License — Feel free to use, modify, and share. See [LICENSE](LICENSE) for details.
